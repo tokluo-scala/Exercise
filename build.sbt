@@ -1,4 +1,4 @@
-name := "hmrc-exercies"
+name := "hmrc-v"
 
 version := "1.0"
 
