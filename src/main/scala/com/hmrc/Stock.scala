@@ -5,5 +5,5 @@ package com.hmrc
   */
 object Stock {
 
-  val shopItems : Map[String, BigDecimal] = Map("apple" -> 0.6, "orange" -> 1.25)
+  val shopItems : Map[String, BigDecimal] = Map("apple" -> 0.6, "orange" -> 0.25)
 }

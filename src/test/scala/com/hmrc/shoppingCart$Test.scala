@@ -34,44 +34,44 @@ class shoppingCart$Test extends FunSuite {
     assert(shoppingCart.checkout(items) == 1.8)
   }
 
-  test ("Checkout should return 1.25 when there is 1 orange") {
+  test ("Checkout should return 0.25 when there is 1 orange") {
     val items = List("orange")
-    assert(shoppingCart.checkout(items) == 1.25)
+    assert(shoppingCart.checkout(items) == 0.25)
   }
 
-  test ("Checkout should return 2.5 when there is 2 oranges") {
+  test ("Checkout should return 0.5 when there is 2 oranges") {
     val items = List("orange", "orange")
-    assert(shoppingCart.checkout(items) == 2.5)
+    assert(shoppingCart.checkout(items) == 0.5)
   }
 
-  test ("Checkout should return 3.75 when there is 3 oranges") {
+  test ("Checkout should return 0.75 when there is 3 oranges") {
     val items = List("orange", "orange", "orange")
-    assert(shoppingCart.checkout(items) == 3.75)
+    assert(shoppingCart.checkout(items) == 0.75)
   }
 
-  test ("Checkout should return 1.85 when there is 1 apple and 1 orange") {
+  test ("Checkout should return 0.85 when there is 1 apple and 1 orange") {
     val items = List("apple", "orange")
-    assert(shoppingCart.checkout(items) == 1.85)
+    assert(shoppingCart.checkout(items) == 0.85)
   }
 
-  test ("Checkout should return 2.45 when there is 2 apples and 1 oranges") {
+  test ("Checkout should return 1.45 when there is 2 apples and 1 oranges") {
     val items = List("apple", "apple", "orange")
-    assert(shoppingCart.checkout(items) == 2.45)
+    assert(shoppingCart.checkout(items) == 1.45)
   }
 
-  test ("Checkout should return 3.05 when there is 3 apples and 1 oranges") {
+  test ("Checkout should return 2.05 when there is 3 apples and 1 oranges") {
     val items = List("apple", "apple", "apple", "orange")
-    assert(shoppingCart.checkout(items) == 3.05)
+    assert(shoppingCart.checkout(items) == 2.05)
   }
 
-  test ("Checkout should return 4.3.75 when there is 3 apples and 2 oranges") {
+  test ("Checkout should return 2.3 when there is 3 apples and 2 oranges") {
     val items = List("apple", "apple", "apple", "orange", "orange")
-    assert(shoppingCart.checkout(items) == 4.3)
+    assert(shoppingCart.checkout(items) == 2.3)
   }
 
-  test ("Checkout should return 5.55 when there is 3 apples and 3 oranges") {
+  test ("Checkout should return 2.55 when there is 3 apples and 3 oranges") {
     val items = List("apple", "apple", "apple", "orange", "orange", "orange")
-    assert(shoppingCart.checkout(items) == 5.55)
+    assert(shoppingCart.checkout(items) == 2.55)
   }
 
   test ("Checkout should return 0.0 when no valid stock") {
