@@ -5,7 +5,8 @@ package com.hmrc
   */
 object main {
 
-    def main(args: Array[String]): Unit = {
-
+    def main(args: List[String]): Unit = {
+      val totalPriceInShoppingCart = shoppingCart.checkout(args)
+      println(s"The total price is : $totalPriceInShoppingCart")
     }
 }
