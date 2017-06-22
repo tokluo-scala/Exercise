@@ -64,9 +64,9 @@ class shoppingCart$Test extends FunSuite {
     assert(shoppingCart.checkout(items) == 3.05)
   }
 
-  test ("Checkout should return 3.75 when there is 3 apples and 2 oranges") {
+  test ("Checkout should return 4.3.75 when there is 3 apples and 2 oranges") {
     val items = List("apple", "apple", "apple", "orange", "orange")
-    assert(shoppingCart.checkout(items) == 3.75)
+    assert(shoppingCart.checkout(items) == 4.3)
   }
 
   test ("Checkout should return 5.55 when there is 3 apples and 3 oranges") {
