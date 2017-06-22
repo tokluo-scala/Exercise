@@ -1,8 +1,9 @@
 package com.hmrc
 
 /**
-  * Created by lout on 22/06/2017.
+  * This will contains the shop items
   */
 object Stock {
 
+  val shopItems : Map[String, BigDecimal] = Map("apple" -> 0.6, "orange" -> 1.25)
 }

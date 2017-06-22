@@ -1,8 +1,12 @@
 package com.hmrc
 
 /**
-  * Created by lout on 22/06/2017.
+  * shopping cart with checkout method
   */
 object shoppingCart {
+
+  val shopItems = Stock.shopItems
+
+
 
 }

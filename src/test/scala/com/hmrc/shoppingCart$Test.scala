@@ -7,4 +7,5 @@ import org.scalatest.FunSuite
   */
 class shoppingCart$Test extends FunSuite {
 
+  
 }
