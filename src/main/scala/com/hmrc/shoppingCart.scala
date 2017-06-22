@@ -20,6 +20,13 @@ object shoppingCart {
   }
 
   def calculateNumberOfPayableItems(totalItems:Int, factor:Int, n:Int) : Int = {
-    0
+    val payableFactor = totalItems / factor
+    def addItemNTimes(noItems:Int, n:Int) : Int = {
+      n match {
+        case 0 => noItems
+        case _ => addItemNTimes(noItems+noItems, n-1)
+      }
+    }
+    addItemNTimes(payableFactor, n) + (totalItems % factor)
   }
 }
