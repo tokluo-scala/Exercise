@@ -7,15 +7,6 @@ import org.scalatest.FunSuite
   */
 class shoppingCart$Test extends FunSuite {
 
-  test ("It should calculate total of 1 apple at price 60p and return 0.6") {
-
-    assert(shoppingCart.calculateTotalPrice(0.6, 1) == 0.6)
-  }
-
-  test ("It should calculate total of 0 apple at price 60p and return 0.0") {
-
-    assert(shoppingCart.calculateTotalPrice(0.6, 0) == 0.0)
-  }
 
   test ("Checkout should return 0.6 when there is 1 apple with buy one get one free offer") {
 
@@ -110,44 +101,55 @@ class shoppingCart$Test extends FunSuite {
     assert(shoppingCart.checkout(items) == 0.0)
   }
 
-  test("Out of total of  1 apples 1 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(1,2,0) == 1)
+  test("Out of total of  1 apples 1 is payable with buy one get one free offer") {
+    assert(Offer.calculateNumberOfPayableItems(1,2,0) == 1)
   }
 
-  test("Out of total of 2 apples 1 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(2,2,0) == 1)
+  test("Out of total of 2 apples 1 is payable with buy one get one free offer") {
+    assert(Offer.calculateNumberOfPayableItems(2,2,0) == 1)
   }
 
-  test("Out of total of 3 apples 2 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(3,2,0) == 2)
+  test("Out of total of 3 apples 2 is payable with buy one get one free offer") {
+    assert(Offer.calculateNumberOfPayableItems(3,2,0) == 2)
   }
 
-  test("Out of total of 4 apples 2 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(4,2,0) == 2)
+  test("Out of total of 4 apples 2 is payable with buy one get one free offer") {
+    assert(Offer.calculateNumberOfPayableItems(4,2,0) == 2)
   }
 
-  test("Out of total of  1 orange 1 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(1,3,1) == 1)
+  test("Out of total of  1 orange 1 is payable with three for price two offer") {
+    assert(Offer.calculateNumberOfPayableItems(1,3,1) == 1)
   }
 
-  test("Out of total of 2 orange 2 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(2,3,1) == 2)
+  test("Out of total of 2 orange 2 is payable with three for price two offer") {
+    assert(Offer.calculateNumberOfPayableItems(2,3,1) == 2)
   }
 
-  test("Out of total of 3 orange 2 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(3,3,1) == 2)
+  test("Out of total of 3 orange 2 is payable with three for price two offer") {
+    assert(Offer.calculateNumberOfPayableItems(3,3,1) == 2)
   }
 
-  test("Out of total of 4 orange 3 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(4,3,1) == 3)
+  test("Out of total of 4 orange 3 is payable with three for price two offer") {
+    assert(Offer.calculateNumberOfPayableItems(4,3,1) == 3)
   }
 
-  test("Out of total of 5 orange 4 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(5,3,1) == 4)
+  test("Out of total of 5 orange 4 is payable with three for price two offer") {
+    assert(Offer.calculateNumberOfPayableItems(5,3,1) == 4)
   }
 
-  test("Out of total of 6 orange 4 is payable") {
-    assert(shoppingCart.calculateNumberOfPayableItems(6,3,1) == 4)
+  test("Out of total of 6 orange 4 is payable with three for price two offer") {
+    assert(Offer.calculateNumberOfPayableItems(6,3,1) == 4)
   }
+
+  test ("It should calculate total of 1 apple at price 60p and return 0.6") {
+
+    assert(Offer.calculateTotalPriceWithOffer(0.6, 1, 2, 0)(Offer.calculateNumberOfPayableItems) == 0.6)
+  }
+
+  test ("It should calculate total of 0 apple at price 60p and return 0.0") {
+
+    assert(Offer.calculateTotalPriceWithOffer(0.6, 0, 2, 0)(Offer.calculateNumberOfPayableItems) == 0.0)
+  }
+
 
 }
