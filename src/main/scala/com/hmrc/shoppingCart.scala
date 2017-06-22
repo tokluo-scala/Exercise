@@ -19,4 +19,7 @@ object shoppingCart {
     price * noOfItems
   }
 
+  def calculateNumberOfPayableItems(totalItems:Int, factor:Int, n:Int) : Int = {
+    0
+  }
 }

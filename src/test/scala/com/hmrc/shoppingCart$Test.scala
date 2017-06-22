@@ -79,4 +79,43 @@ class shoppingCart$Test extends FunSuite {
     assert(shoppingCart.checkout(items) == 0.0)
   }
 
+  test("Out of total of  1 apples 1 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(1,2,0) == 1)
+  }
+
+  test("Out of total of 2 apples 1 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(2,2,0) == 1)
+  }
+
+  test("Out of total of 3 apples 2 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(3,2,0) == 2)
+  }
+
+  test("Out of total of 4 apples 2 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(4,2,0) == 2)
+  }
+
+  test("Out of total of  1 orange 1 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(1,3,1) == 1)
+  }
+
+  test("Out of total of 2 orange 2 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(2,3,1) == 2)
+  }
+
+  test("Out of total of 3 orange 2 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(3,3,1) == 2)
+  }
+
+  test("Out of total of 4 orange 3 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(4,3,1) == 3)
+  }
+
+  test("Out of total of 5 orange 4 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(5,3,1) == 4)
+  }
+
+  test("Out of total of 6 orange 4 is payable") {
+    assert(shoppingCart.calculateNumberOfPayableItems(6,3,1) == 4)
+  }
 }
